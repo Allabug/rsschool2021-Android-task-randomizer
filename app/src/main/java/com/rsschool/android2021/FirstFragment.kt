@@ -56,7 +56,7 @@ class FirstFragment : Fragment() {
                 var min = minValueInput.text.toString().toInt()
                 var max = maxValueInput.text.toString().toInt()
 
-                if (min < max && (min in 0..MAX_INTEGER) && (max in 0..MAX_INTEGER)) {
+                if (min < max && (min in 0..Int.MAX_VALUE) && (max in 0..Int.MAX_VALUE)) {
                     dataPassListener?.passDataSecondFragment(min, max)
                 } else {
                     Toast.makeText(context, R.string.invalid_data_toast, Toast.LENGTH_SHORT).show()
@@ -79,6 +79,5 @@ class FirstFragment : Fragment() {
         }
 
         private const val PREVIOUS_RESULT_KEY = "PREVIOUS_RESULT"
-        private const val MAX_INTEGER = 2147483647
     }
 }
